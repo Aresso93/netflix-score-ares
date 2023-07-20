@@ -15,6 +15,16 @@ class DBService {
         }).then((resp) => resp.json());
     }
 
+    static createShow(show) {
+        const createUrl =
+            "https://64b512c1f3dbab5a95c6a48c.mockapi.io/shows";
+        return fetch(createUrl, {
+            method: "post",
+            body: JSON.stringify(show),
+            headers: { "content-type": "application/json" },
+        }).then((resp) => resp.json());
+    }
+
     static upvote(show){
         show.upVotes++;
         return this.updateShow(show);
