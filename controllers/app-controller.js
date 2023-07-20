@@ -34,7 +34,7 @@ class AppController {
     renderShows() {
         if (this.orderMethod = 'upvote') {
            /// SORT
-        } else if(this.orderMethod = 'downVote'){
+        } else if(this.orderMethod = 'downvote'){
             ///SORT
         }
 
@@ -66,7 +66,7 @@ class AppController {
             listElement.appendChild(titleNode);
 
             const upvotesSpan = document.createElement("span");
-            upvotesSpan.appendChild(document.createTextNode(show.upVotes));
+            upvotesSpan.appendChild(document.createTextNode(show.upvotes));
             listElement.appendChild(upvotesSpan);
 
             const upButton = document.createElement("button");
@@ -75,7 +75,7 @@ class AppController {
             listElement.appendChild(upButton);
 
             const downSpan = document.createElement("span");
-            downSpan.appendChild(document.createTextNode(show.downVotes));
+            downSpan.appendChild(document.createTextNode(show.downvotes));
             listElement.appendChild(downSpan);
 
             const downButton = document.createElement("button");
@@ -109,13 +109,13 @@ class AppController {
 
     sortByUpvotes() {
         this.orderMethod = 'upvote'
-        //this.shows.sort((s1, s2) => s2.upVotes - s1.upVotes);
+        //this.shows.sort((s1, s2) => s2.upvotes - s1.upvotes);
         this.renderShows();
     }
 
     sortByDownvotes() {
         this.orderMethod = 'downvote'
-        //this.shows.sort((s1, s2) => s2.downVotes - s1.downVotes);
+        //this.shows.sort((s1, s2) => s2.downvotes - s1.downvotes);
         this.renderShows();
     }
 }

@@ -23,8 +23,8 @@ function sendData(event){
         author: formData.get('author'),
         imageUrl: formData.get('imageUrl'),
         isOver: formData.get('isOver') === 'on' ? true : false,
-        upVotes: 0,
-        downVotes: 0
+        upvotes: 0,
+        downvotes: 0
     }
 
     console.log(newShow);

@@ -1,13 +1,13 @@
 class DBService {
 
     static getAllShows() {
-        const url = "https://64b512c1f3dbab5a95c6a48c.mockapi.io/shows";
+        const url = "https://64b512c9f3dbab5a95c6a4ff.mockapi.io/shows";
         return fetch(url).then((resp) => resp.json());
     }
 
     static updateShow(show) {
         const updateUrl =
-            "https://64b512c1f3dbab5a95c6a48c.mockapi.io/shows/" + show.id;
+        "https://64b512c9f3dbab5a95c6a4ff.mockapi.io/shows/" + show.id;
         return fetch(updateUrl, {
             method: "put",
             body: JSON.stringify(show),
@@ -17,7 +17,7 @@ class DBService {
 
     static createShow(show) {
         const createUrl =
-            "https://64b512c1f3dbab5a95c6a48c.mockapi.io/shows";
+            "https://64b512c9f3dbab5a95c6a4ff.mockapi.io/shows";
         return fetch(createUrl, {
             method: "post",
             body: JSON.stringify(show),
@@ -26,12 +26,12 @@ class DBService {
     }
 
     static upvote(show){
-        show.upVotes++;
+        show.upvotes++;
         return this.updateShow(show);
     }
 
     static downvote(show){
-        show.downVotes++;
+        show.downvotes++;
         return this.updateShow(show);
     }
 }
