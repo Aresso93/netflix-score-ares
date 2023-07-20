@@ -32,9 +32,11 @@ class AppController {
     }
 
     renderShows() {
-        // if (this.orderMethod = 'upvote') {
-
-        // } elseif...
+        if (this.orderMethod = 'upvote') {
+           /// SORT
+        } else if(this.orderMethod = 'downVote'){
+            ///SORT
+        }
 
         const btnContainer = document.getElementById("btn-container");
         btnContainer.innerHTML = "";
@@ -100,18 +102,20 @@ class AppController {
             this.isVoting = true;
             DBService.downvote(show).then((show) => {
                 this.renderShows();
+                this.isVoting = false;
             });
         }
     }
 
     sortByUpvotes() {
-        //this.orderMethod = 'upvote'
-        this.shows.sort((s1, s2) => s2.upVotes - s1.upVotes);
+        this.orderMethod = 'upvote'
+        //this.shows.sort((s1, s2) => s2.upVotes - s1.upVotes);
         this.renderShows();
     }
 
     sortByDownvotes() {
-        this.shows.sort((s1, s2) => s2.downVotes - s1.downVotes);
+        this.orderMethod = 'downvote'
+        //this.shows.sort((s1, s2) => s2.downVotes - s1.downVotes);
         this.renderShows();
     }
 }
