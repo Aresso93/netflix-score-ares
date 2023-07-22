@@ -31,6 +31,7 @@ class AppController {
         `;
     }
 
+    
     renderShows() {
         if (this.orderMethod = 'upvote') {
            /// SORT
