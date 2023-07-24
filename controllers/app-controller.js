@@ -2,6 +2,7 @@ class AppController {
     constructor() {
         this.shows = [];
         this.isVoting = false;
+        this.orderMethod = 'upvote';
     }
 
     init() {
@@ -32,10 +33,10 @@ class AppController {
     }
 
     renderShows() {
-        if (this.orderMethod = 'upvote') {
-           /// SORT
-        } else if(this.orderMethod = 'downVote'){
-            ///SORT
+        if (this.orderMethod === 'upvote') {
+           this.shows.sort((s1, s2) => s2.upVotes - s1.upVotes);
+        } else if(this.orderMethod === 'downvote'){
+            this.shows.sort((s1, s2) => s2.downVotes - s1.downVotes);
         }
 
         const btnContainer = document.getElementById("btn-container");
