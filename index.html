@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Score</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div id="app">
+
+    </div>
+    <div>
+        <!-- A modal dialog containing a form -->
+        <dialog id="newShowDialog">
+            <form id="create-form" name="create" method="dialog" onsubmit="sendData(event)">
+                <div>
+                    <label for="title">Inserisci il titolo</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div>
+                    <label for="author">Inserisci l'autore</label>
+                    <input type="text" name="author" id="author" required>      
+                </div>
+                <div>
+                    <label for="imageUrl">Inserisci l'url dell'immagine</label>
+                    <input type="text" name="imageUrl" id="imageUrl" required>      
+                </div>
+                <div>
+                    <label for="isOver">spunta se la serie è conclusa</label>
+                    <input type="checkbox" name="isOver" id="isOver">
+                </div>
+                <div>
+                    <button id="cancelButton">Cancel</button>
+                    <button id="confirmBtn" type="submit" formmethod="dialog">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+        <p>
+            <button id="showDialog">Show the dialog</button>
+        </p>
 
     </div>
 </body>
 <script src="./services/db-service.js"></script>
 <script src="./controllers/app-controller.js"></script>
 <script src="./main.js"></script>
+
 </html>
-
-
-
